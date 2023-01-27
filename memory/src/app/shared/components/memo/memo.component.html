@@ -1,0 +1,14 @@
+<div class="mameria">
+<div width="70%" padding-left="20px" *ngIf="contador < (cards.length/2)" class="c-memory">
+  <div *ngFor="let card of cards">
+    <img *ngIf="card.selected" src="{{ card.img }}">
+    <img *ngIf="card.checked" src="assets/tick.svg" >
+    <img *ngIf="!card.selected && !card.checked" (click)="checkCard(card)" src="assets/universe.svg" >
+  </div>
+</div>
+
+</div>
+<div class= "start-agaig" *ngIf="contador === (cards.length/2)" >
+<h2> Has Ganado!</h2>
+<button (click)="reset()"> Comienza de Nuevo </button>
+</div>
